@@ -1,6 +1,7 @@
-import { Star, Clock } from 'react-feather';
+
 
 import '../styles/movie-card.scss';
+import { FooterCard } from './FooterCard';
 
 interface MovieCardProps {
   title: string;
@@ -17,20 +18,7 @@ export function MovieCard(props: MovieCardProps) {
         alt={props.title}
       />
 
-      <div>
-        <div className="movie-info">
-          <span>{props.title}</span>
-          <div className="meta">
-            <div>
-              <Star /> {props.rating}
-            </div>
-
-            <div>
-              <Clock /> {props.runtime}
-            </div>
-          </div>
-        </div>
-      </div>
+      <FooterCard title={props.title} rating={props.rating} runtime={props.runtime} />
     </div>
   )
 }
